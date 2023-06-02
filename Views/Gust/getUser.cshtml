@@ -1,0 +1,29 @@
+﻿@model List<Gust>
+@{
+    ViewData["Title"] = "getUser";
+}
+
+
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Emial</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+    <thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.F_Name</td>
+                <td>@item.L_Name</td>
+                <td>@item.Emial</td>
+                <td>@item.phoneNumber</td>
+            </tr>
+        }
+    </thead>
+</table>

@@ -1,0 +1,30 @@
+﻿@model addGustcs
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+
+<form class="row g-3" asp-action="Create" asp-controller="Gust">
+    <div class="col-md-6">
+        <label asp-for="F_name"  class="form-label">First Name</label>
+        <input type="text" asp-for="F_name" class="form-control" >
+    </div>
+    <div class="col-md-6">
+        <label  asp-for="L_name" class="form-label">Last_Name</label>
+        <input type="text" class="form-control" asp-for="L_name" >
+    </div>
+    <div class="col-12">
+        <label asp-for="Emial" class="form-label">Email</label>
+        <input type="email" asp-for="Emial" class="form-control">
+    </div>
+    <div class="col-12">
+        <label asp-for="PhoneNumber" class="form-label">PhoneNumber</label>
+        <input type="text" asp-for="PhoneNumber" class="form-control" >
+    </div>
+
+  <br />
+    <div class="col-12">
+        <input type="submit" class="btn btn-primary" value="Save">
+    </div>
+</form>

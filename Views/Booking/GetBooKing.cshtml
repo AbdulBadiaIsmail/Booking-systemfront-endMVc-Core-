@@ -1,0 +1,36 @@
+﻿@model List<BooKing>
+@{
+    ViewData["Title"] = "GetBooKing";
+}
+<br />
+<br />
+ <table class="table">
+     <thead>
+         <tr>
+             <th>Booking_Id</th>
+             <th>First_Name</th>
+            <th>LastName</th>
+            <th>TotalPrice</th>
+            <th>Phone</th>
+            <th>BooKingCount</th>
+        </tr>
+     </thead>
+     <tbody>
+         @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Booking_Id</td>
+                <td>@item.Fname</td>
+                <td>@item.LName</td>
+                <td>@item.TotalPrice</td>
+                <td>@item.Phone</td>
+                <td>@item.BooKingCount</td>
+               <td>
+                    <a asp-action="Edit" asp-controller="Booking" asp-route-id="@item.Booking_Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-controller="Booking" asp-route-id="@item.Booking_Id" class="btn btn-danger" onclick="return confirm('are you sure dalet')">Delete</a>
+               </td>
+            </tr>
+        }
+     </tbody>
+ </table>
+

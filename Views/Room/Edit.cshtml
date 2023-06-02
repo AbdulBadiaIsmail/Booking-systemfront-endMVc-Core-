@@ -1,0 +1,48 @@
+﻿@model Roomupdate
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<br />
+<form class="row g-3" asp-action="Edit" asp-controller="Room" enctype="multipart/form-data" method="post">
+    <input type="hidden" asp-for="Number_Ro" class="form-control">
+  <div class="col-md-12">
+        <label  asp-for="TypeName" class="form-label">TypeName</label>
+        <input type="text"  asp-for="TypeName" class="form-control" id="TypeName">
+        <span asp-validation-for="TypeName" class="text danger"></span>
+  </div>
+    <div class="input-group col-md-6">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" asp-for="Room_Des" aria-label="With textarea"></textarea>
+        <span asp-validation-for="Room_Des" class="text danger"></span>
+
+    </div>
+  <div class="col-12">
+        <label asp-for="Price" class="form-label">Price</label>
+    <input type="number" min="1" asp-for="Price" class="form-control" >
+        <span asp-validation-for="Price" class="text danger"></span>
+
+  </div>
+  <div class="col-12">
+        <label asp-for="image_path" class="form-label">image_Name</label>
+    <input type="file" asp-for="image_path"  class="form-control">
+        <span asp-validation-for="image_path" class="text danger"></span>
+
+  </div>
+  <div class="col-md-8">
+        <label asp-for="Avalable" class="form-label">Avalable</label>
+    <select asp-for="Avalable" class="form-select">
+      <option value="1">Not Avalable</option>
+      <option  value="0">Avalable</option>
+    </select>
+        <span asp-validation-for="Avalable" class="text danger"></span>
+
+  </div>
+  <div class="col-12">
+    <input type="submit" class="btn btn-primary" value="Save">
+  </div>
+</form>
+<div>
+    <a asp-action="getRoom">Back to List</a>
+</div>

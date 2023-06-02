@@ -1,0 +1,83 @@
+﻿@model AddBooKing
+@{
+	ViewData["Title"] = "Create";
+	
+}
+<br />
+<br />
+<br />
+
+
+<form asp-action="Create" asp-controller="Booking" method="post" class="row" >
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="form-group col-md-6">
+					<label asp-for="datestart" class="form-label"></label>
+					<input class="form-control" asp-for="datestart" type="date" required>
+				</div>
+				<div class="form-group col-md-6">
+					<div>
+						<label asp-for="dateend" class="form-label"></label>
+						<input class="form-control" asp-for="dateend" type="date" required>
+					</div>
+				</div>
+			</div>
+		</div>
+	      <div class="container">
+			  <div class="row justify-content-center">
+				<div class="form-group mt-4 col-md-6">
+							<label class="form-label">GustName</label>
+							<select class="form-control" asp-for="gust_id" asp-items="ViewBag.Gust as SelectList">
+							</select>
+
+				<a asp-action="create" asp-controller="Gust" class="btn btn-primary mt-3">CreateNewGust</a>
+				</div>
+			
+			<div class="form-group col-md-6">
+				<div>
+					<label class="form-label">select Room</label>
+					<select name="room" class="form-select" multiple
+							asp-items="ViewBag.RoomAvailable as MultiSelectList">
+					</select>
+				</div>
+			</div>
+		  </div>
+		</div>
+		<br />
+		<br />
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<input type="submit" class="btn btn-primary" value="Create BooKing" />
+		</div>
+
+	</div>
+			
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
